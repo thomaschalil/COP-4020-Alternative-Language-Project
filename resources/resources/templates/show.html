@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Cell Phones Data</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#cellTable').DataTable({
+				"ajax": {
+					"url": "/api/cells",
+					"dataSrc": ""
+				},
+				"columns": [
+					{"data": "oem"},
+					{"data": "model"},
+					{"data": "launchYear"},
+					{"data": "launchStatus"},
+					{"data": "bodyDimensions"},
+					{"data": "bodyWeight"},
+					{"data": "bodySim"},
+					{"data": "displayType"},
+					{
+						"data": "displaySize",
+						"render": function (data, type, row) {
+							return data ? parseFloat(data).toFixed(2) : ''; // Format displaySize to two decimal places
+						},
+					},
+					{"data": "displayResolution"},
+					{"data": "featuresSensors"},
+					{"data": "platformOs"}
+				]
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<table id="cellTable" class="display" style="width:100%">
+		<thead>
+			<tr>
+				<th>OEM</th>
+				<th>Model</th>
+				<th>Launch Year</th>
+				<th>Launch Status</th>
+				<th>Body Dimensions</th>
+				<th>Body Weight</th>
+				<th>Body SIM</th>
+				<th>Display Type</th>
+				<th>Display Size (inches)</th>
+				<th>Display Resolution</th>
+				<th>Features Sensors</th>
+				<th>Platform OS</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<th>OEM</th>
+				<th>Model</th>
+				<th>Launch Year</th>
+				<th>Launch Status</th>
+				<th>Body Dimensions</th>
+				<th>Body Weight</th>
+				<th>Body SIM</th>
+				<th>Display Type</th>
+				<th>Display Size (inches)</th>
+				<th>Display Resolution</th>
+				<th>Features Sensors</th>
+				<th>Platform OS</th>
+			</tr>
+		</tfoot>
+	</table>
+</body>
+
+</html>

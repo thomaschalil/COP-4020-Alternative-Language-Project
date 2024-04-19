@@ -64,7 +64,7 @@ This endpoint retrieves all cell phone records stored in the database.
 
 ## Endpoints
 
-- **POST `/api/cells/upload`** - Uploads a CSV file and stores its data.
+- **GET `/showData`** - See data in html with dataTable.
 - **GET `/api/cells`** - Retrieves all stored cell phone records.
 
 # Built With
